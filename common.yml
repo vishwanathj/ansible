@@ -1,0 +1,7 @@
+---
+
+- name: installs common packages and settings
+  hosts: all
+  roles:
+    - { role: passwordless_sudo }
+    - { role: ntp }
