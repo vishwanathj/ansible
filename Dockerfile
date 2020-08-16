@@ -19,3 +19,5 @@ WORKDIR /tmp
 ARG INCUBATOR_VER=unknown
 
 RUN INCUBATOR_VER=${INCUBATOR_VER} git clone https://github.com/vishwanathj/ansible.git
+
+WORKDIR /tmp/ansible
