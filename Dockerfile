@@ -16,8 +16,8 @@ RUN sed -i "s/#host_key_checking/host_key_checking/g" /etc/ansible/ansible.cfg
 WORKDIR /tmp
 
 # https://stackoverflow.com/questions/35154219/rebuild-docker-image-from-specific-step
-ARG INCUBATOR_VER=unknown
+ARG VER=unknown
 
-RUN INCUBATOR_VER=${INCUBATOR_VER} git clone https://github.com/vishwanathj/ansible.git
+RUN VER=${VER} git clone https://github.com/vishwanathj/ansible.git
 
 WORKDIR /tmp/ansible

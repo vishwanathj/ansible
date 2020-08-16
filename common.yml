@@ -5,5 +5,5 @@
   roles:
     - { role: passwordless_sudo }
     - { role: ntp }
-    - { role: pkg }
+    - { role: pkgs }
     - { role: firewall }
