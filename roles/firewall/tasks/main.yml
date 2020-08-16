@@ -1,7 +1,7 @@
 ---
 
-- name: open up port 5901 for vnc
+- name: enable vnc-service
   firewalld:
-    port: 5901/tcp
+    service: vnc-server
     permanent: yes
     state: enabled
