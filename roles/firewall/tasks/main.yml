@@ -6,3 +6,9 @@
     service: vnc-server
     permanent: yes
     state: enabled
+
+- name: post task restart firewalld
+  systemd:
+    state: restarted
+    daemon_reload: yes
+    name: firewalld
