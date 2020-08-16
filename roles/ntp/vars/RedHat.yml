@@ -4,7 +4,9 @@
 ---
 
 ntp_default_packages:
-  - name: 'ntp'
+  #- name: 'ntp'
+  - name: 'chrony'
   - name: 'tzdata'
 
-ntp_default_service_name: 'ntpd'
+ntp_default_service_name: 'chronyd'
+#ntp_default_service_name: 'ntpd'
