@@ -1,0 +1,5 @@
+---
+- name: installs ntp
+  hosts: all
+  roles: 
+    - { role: ontic.ntp }
