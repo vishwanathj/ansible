@@ -1,0 +1,6 @@
+---
+
+- name: open up port 5901 for vnc
+  firewalld:
+    port: 5901/tcp
+    permanent: yes
