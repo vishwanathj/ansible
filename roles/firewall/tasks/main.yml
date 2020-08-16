@@ -4,3 +4,4 @@
   firewalld:
     port: 5901/tcp
     permanent: yes
+    state: enabled
