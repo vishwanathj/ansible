@@ -1,6 +1,7 @@
 ---
 
 - name: enable vnc-service
+  become: yes
   firewalld:
     service: vnc-server
     permanent: yes
