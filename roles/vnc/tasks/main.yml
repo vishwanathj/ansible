@@ -13,6 +13,12 @@
     daemon_reload: yes
     name: firewalld
 
+- name: disable vnc encryption
+  dconf:
+    key: "/org/gnome/desktop/remote-desktop/vnc"
+    value: "['none']"
+    state: present
+
 - name: disable SELinux
   selinux:
     state: disabled
