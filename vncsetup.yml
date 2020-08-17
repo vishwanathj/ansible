@@ -2,4 +2,4 @@
 - name: firewall related actions
   hosts: all
   roles:
-    - { role: firewall }
+    - { role: vnc }
