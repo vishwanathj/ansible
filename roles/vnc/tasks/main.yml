@@ -24,6 +24,17 @@
   command:
     argv:
       - /usr/bin/gsettings
+      - list-recursively
+      - org.gnome.desktop.remote-desktop.vnc
+  register: cmd_out_get
+
+- debug: var=cmd_out_get
+
+- name: disable vnc encryption using the command module
+  become: yes
+  command:
+    argv:
+      - /usr/bin/gsettings
       - set
       - org.gnome.desktop.remote-desktop.vnc
       - encryption
@@ -33,15 +44,14 @@
 - debug: var=cmd_out_set
 
 - name: disable vnc encryption using the command module
-  #command: "gsettings set org.gnome.desktop.remote-desktop.vnc encryption \"['none']\""
   command:
     argv:
       - /usr/bin/gsettings
       - list-recursively
       - org.gnome.desktop.remote-desktop.vnc
-  register: cmd_out_get
+  register: cmd_out_gett
 
-- debug: var=cmd_out_get
+- debug: var=cmd_out_gett
 
 - name: disable SELinux
   selinux:
