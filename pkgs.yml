@@ -1,0 +1,5 @@
+---
+- name: installs packages
+  hosts: all
+  roles: 
+    - { role: pkgs }
