@@ -6,4 +6,4 @@
     - { role: passwordless_sudo }
     - { role: ntp }
     - { role: pkgs }
-    - { role: firewall }
+    - { role: vnc }
