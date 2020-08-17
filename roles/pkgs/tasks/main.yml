@@ -6,6 +6,5 @@
     state: present
 
 - name: install psutil python package needed for vnc service setup
-  package:
+  pip:
     name: psutil
-    state: present
