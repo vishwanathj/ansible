@@ -13,11 +13,15 @@
     daemon_reload: yes
     name: firewalld
 
-- name: disable vnc encryption
-  dconf:
-    key: "/org/gnome/desktop/remote-desktop/vnc"
-    value: "['none']"
-    state: present
+# the below fails due to psutil not being able to be installed on target machine 
+#- name: disable vnc encryption
+#  dconf:
+#    key: "/org/gnome/desktop/remote-desktop/vnc"
+#    value: "['none']"
+#    state: present
+
+- name: disable vnc encryption using the command module
+  command: gsettings set org.gnome.desktop.remote-desktop.vnc encryption "['none']"
 
 - name: disable SELinux
   selinux:

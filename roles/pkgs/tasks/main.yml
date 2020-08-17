@@ -5,6 +5,6 @@
     name: firewalld
     state: present
 
-- name: install psutil python package needed for vnc service setup
-  pip:
-    name: psutil
+#- name: install psutil python package needed for vnc service setup
+#  pip:
+#    name: psutil
