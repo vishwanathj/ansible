@@ -20,7 +20,7 @@
 #    value: "['none']"
 #    state: present
 
-- name: disable vnc encryption using the command module
+- name: get vnc encryption setting using the command module
   command:
     argv:
       - /usr/bin/gsettings
@@ -43,7 +43,7 @@
 
 - debug: var=cmd_out_set
 
-- name: disable vnc encryption using the command module
+- name: get vnc encryption setting using the command module
   command:
     argv:
       - /usr/bin/gsettings
