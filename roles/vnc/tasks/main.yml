@@ -21,7 +21,10 @@
 #    state: present
 
 - name: disable vnc encryption using the command module
-  command: gsettings set org.gnome.desktop.remote-desktop.vnc encryption "['none']"
+  command: "gsettings set org.gnome.desktop.remote-desktop.vnc encryption \"['none']\""
+  register: cmd_out
+
+- debug: var=cmd_out
 
 - name: disable SELinux
   selinux:
