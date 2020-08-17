@@ -21,4 +21,4 @@
 - name: reboot for SELinux changes to take effect
   reboot:
     msg: "reboot initiated for SELinux changes to take effect"
-  when selinux_task_result.reboot_required = true
+  when: selinux_task_result.reboot_required = true
