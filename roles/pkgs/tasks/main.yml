@@ -1,7 +1,11 @@
 ---
 
-- name: install firewalld
+- name: install firewalld needed for vnc service setup
   package:
     name: firewalld
     state: present
 
+- name: install psutil python package needed for vnc service setup
+  package:
+    name: psutil
+    state: present
