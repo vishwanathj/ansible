@@ -1,6 +1,7 @@
 ---
 
 - name: install firewalld needed for vnc service setup
+  become: yes
   package:
     name: firewalld
     state: present
