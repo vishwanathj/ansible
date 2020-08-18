@@ -30,10 +30,12 @@
 
 - debug: var=cmd_out_get
 
+# https://askubuntu.com/questions/323776/gsettings-not-working-over-ssh/326773#326773
 - name: disable vnc encryption using the command module
   become: yes
   command:
     argv:
+      - /usr/bin/dbus-launch
       - /usr/bin/gsettings
       - set
       - org.gnome.desktop.remote-desktop.vnc
