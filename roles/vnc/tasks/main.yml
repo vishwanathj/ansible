@@ -8,6 +8,7 @@
     state: enabled
 
 - name: post task restart firewalld
+  become: yes
   systemd:
     #state: restarted
     state: reloaded
