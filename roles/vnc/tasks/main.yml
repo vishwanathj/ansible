@@ -9,7 +9,8 @@
 
 - name: post task restart firewalld
   systemd:
-    state: restarted
+    #state: restarted
+    state: reloaded
     daemon_reload: yes
     name: firewalld
 
