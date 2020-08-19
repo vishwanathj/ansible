@@ -3,7 +3,7 @@
 - name: install openvswitch packages
   become: yes
   package:
-    name: {{ item }}
+    name: "{{ item }}"
     state: present
   with_items:
     - openvswitch-switch
