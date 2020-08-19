@@ -6,5 +6,6 @@
     name: "{{ item }}"
     state: present
   with_items:
+    - openvswitch
     - openvswitch-switch
     - openvswitch-common
