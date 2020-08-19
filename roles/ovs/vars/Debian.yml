@@ -1,0 +1,8 @@
+---
+
+ovs_packages:
+  - 'openvswitch-vswitch'
+  - 'openvswitch-common'
+
+ovs_services:
+  - "openvswitch-switch"

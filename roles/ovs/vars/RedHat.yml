@@ -1,0 +1,10 @@
+---
+
+ovs_packages:
+  - 'epel-release'
+  - 'centos-release-openstack-train'
+  - 'openvswitch'
+  - 'libibverbs'
+
+ovs_services:
+  - "openvswitch"
