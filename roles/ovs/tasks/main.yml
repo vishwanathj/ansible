@@ -10,6 +10,13 @@
     state: present
   with_items: '{{ ovs_packages }}'
 
+- name: ensure ovs services are started and enabled on boot when using the systemd module
+  systemd:
+    name: "{{ item }}"
+    enabled: yes
+    state: started
+  with_items: "{{ ovs_services }}"
+
 - name: ensure ovs services are started and enabled on boot
   service:
     name: "{{ item }}"
