@@ -1,0 +1,5 @@
+---
+- name: installs ovs packages
+  hosts: all
+  roles: 
+    - { role: ovs }
