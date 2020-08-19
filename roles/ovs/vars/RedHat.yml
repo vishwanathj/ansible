@@ -7,5 +7,8 @@ ovs_packages:
   - 'openvswitch'
   - 'libibverbs'
 
+# for some reason, ansible fails to enable and start the service, had to execute the below commands manually on the target CentOS machines
+# sudo systemctl enable --now openvswitch
+# sudo systemctl status openvswitch
 ovs_services:
   - "openvswitch"
