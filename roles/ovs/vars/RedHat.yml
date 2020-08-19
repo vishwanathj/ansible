@@ -1,5 +1,6 @@
 ---
 
+# https://www.osradar.com/how-to-install-open-vswitch-on-centos-8-rhel-8/
 ovs_packages:
   - 'epel-release'
   - 'centos-release-openstack-train'
