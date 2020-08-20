@@ -1,10 +1,11 @@
 ---
 
 ovn_packages:
-  - 'ovn'
+  #- 'ovn'
   - 'ovn-central'
   - 'ovn-host'
-  - 'ovn-vtep'
+  #- 'ovn-vtep'
+  - 'ovn-common'
   #- 'ovn-docker'
 
 ovn_services:
