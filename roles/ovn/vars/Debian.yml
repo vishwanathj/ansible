@@ -10,5 +10,7 @@ ovn_packages:
 
 ovn_services:
   #- "ovn-controller-vtep"
-  - "ovn-controller"
-  - "ovn-northd"
+  #- "ovn-controller"
+  #- "ovn-northd"
+  - "ovn-central"
+  - "ovn-host"
