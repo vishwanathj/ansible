@@ -8,4 +8,6 @@ ovn_packages:
   #- 'ovn-docker'
 
 ovn_services:
-  - "ovn"
+  - "ovn-controller-vtep"
+  - "ovn-controller"
+  - "ovn-northd"
