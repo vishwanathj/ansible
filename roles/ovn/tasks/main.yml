@@ -11,8 +11,23 @@
   with_items: '{{ ovn_packages }}'
 
 - name: ensure OVN services are started and enabled on boot when using the systemd module
+  become: yes
   systemd:
     name: "{{ item }}"
     enabled: yes
     state: started
   with_items: "{{ ovn_services }}"
+  when: 'ansible_os_family == "Debian"'
+
+# systemd module is non-functional for CentOS
+- name: ensure OVN services are started usign the command module
+  become: yes
+  command:
+    argv:
+      - systemctl
+      - enable
+      - --now
+      - "{{ item }}"
+  with_items: "{{ ovn_services }}"
+  when: 'ansible_os_family == "RedHat"'
+
