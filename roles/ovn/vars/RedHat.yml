@@ -5,7 +5,7 @@ ovn_packages:
   - 'ovn-central'
   - 'ovn-host'
   - 'ovn-vtep'
-  - 'ovn-docker'
+  #- 'ovn-docker'
 
 ovn_services:
   - "ovn"
