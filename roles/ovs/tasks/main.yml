@@ -16,11 +16,16 @@
     enabled: yes
     state: started
   with_items: "{{ ovs_services }}"
+  when: 'ansible_os_family == "Debian"'
 
-- name: ensure ovs services are started and enabled on boot
-  service:
-    name: "{{ item }}"
-    state: "started"
-    enabled: true
-    use: service
+# systemd module is erroring out for CentOS
+- name: ensure OVN services are started usign the command module
+  become: yes
+  command:
+    argv:
+      - systemctl
+      - enable
+      - --now
+      - "{{ item }}"
   with_items: "{{ ovs_services }}"
+  when: 'ansible_os_family == "RedHat"'
