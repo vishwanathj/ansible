@@ -1,0 +1,8 @@
+---
+- name: installs docker packages
+  hosts: all
+  roles: 
+    - role: docker
+      vars:
+        docker_users: ["openshift"]
+     
