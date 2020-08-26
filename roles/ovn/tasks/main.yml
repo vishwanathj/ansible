@@ -38,6 +38,7 @@
       - --now
       - "{{ item }}"
   with_items: "{{ ovn_central_services }}"
+  when: install_central
 
 - name: ensure OVN node services are started usign the command module
   become: yes
@@ -48,3 +49,4 @@
       - --now
       - "{{ item }}"
   with_items: "{{ ovn_node_services }}"
+  when: install_node

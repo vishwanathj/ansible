@@ -6,6 +6,7 @@ ovn_node_packages:
 
 ovn_node_services:
   - "ovn-host"
+  - "ovn-controller"
 
 ovn_central_packages:
   - 'ovn-central'
