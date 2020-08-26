@@ -13,3 +13,7 @@ To run the vnc role execute:
 To run the docker role execute:
 
 ``` ansible-playbook -i hosts.ini docker.yml -u root -k```
+
+To run the ovs role execute:
+
+``` ansible-playbood -i hosts.ini ovs.yml -u ubuntu -kK```
