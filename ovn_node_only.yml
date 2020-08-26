@@ -1,0 +1,8 @@
+---
+- name: installs ovn node only packages
+  hosts: all
+  roles: 
+    - role: ovn 
+      vars:
+        install_node: true
+        install_central: false

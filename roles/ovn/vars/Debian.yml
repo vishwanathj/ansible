@@ -1,16 +1,15 @@
 ---
 
-ovn_packages:
-  #- 'ovn'
-  - 'ovn-central'
+ovn_node_packages:
   - 'ovn-host'
-  #- 'ovn-vtep'
   - 'ovn-common'
-  #- 'ovn-docker'
 
-ovn_services:
-  #- "ovn-controller-vtep"
-  #- "ovn-controller"
-  #- "ovn-northd"
-  - "ovn-central"
+ovn_node_services:
   - "ovn-host"
+
+ovn_central_packages:
+  - 'ovn-central'
+
+ovn_central_services:
+  - "ovn-central"
+

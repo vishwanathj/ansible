@@ -3,24 +3,33 @@
 - name: include OS-specific variables
   include_vars: '{{ ansible_os_family }}.yml'
 
-- name: install OVN packages
+- name: install OVN node packages
   become: yes
   package:
     name: "{{ item }}"
     state: present
-  with_items: '{{ ovn_packages }}'
+  with_items: '{{ ovn_node_packages }}'
+  when: install_node
 
-- name: ensure OVN services are started and enabled on boot when using the systemd module
+- name: install OVN central packages
   become: yes
-  systemd:
+  package:
     name: "{{ item }}"
-    enabled: yes
-    state: started
-  with_items: "{{ ovn_services }}"
-  when: 'ansible_os_family == "Debian"'
+    state: present
+  with_items: '{{ ovn_central_packages }}'
+  when: install_central
+
+#- name: ensure OVN services are started and enabled on boot when using the systemd module
+#  become: yes
+#  systemd:
+#    name: "{{ item }}"
+#    enabled: yes
+#    state: started
+#  with_items: "{{ ovn_services }}"
+#  when: 'ansible_os_family == "Debian"'
 
 # systemd module is non-functional for CentOS
-- name: ensure OVN services are started usign the command module
+- name: ensure OVN central services are started usign the command module
   become: yes
   command:
     argv:
@@ -28,6 +37,14 @@
       - enable
       - --now
       - "{{ item }}"
-  with_items: "{{ ovn_services }}"
-  when: 'ansible_os_family == "RedHat"'
+  with_items: "{{ ovn_central_services }}"
 
+- name: ensure OVN node services are started usign the command module
+  become: yes
+  command:
+    argv:
+      - systemctl
+      - enable
+      - --now
+      - "{{ item }}"
+  with_items: "{{ ovn_node_services }}"
