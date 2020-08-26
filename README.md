@@ -16,4 +16,4 @@ To run the docker role execute:
 
 To run the ovs role execute:
 
-``` ansible-playbood -i hosts.ini ovs.yml -u ubuntu -kK```
+``` ansible-playbook -i hosts.ini ovs.yml -u ubuntu -kK```
