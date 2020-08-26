@@ -9,3 +9,7 @@ Note: the `k` is for ssh password and `K` is for sudo password
 To run the vnc role execute: 
 
 ``` ansible-playbook -i hosts.ini vncsetup.yml -u openshift -k```
+
+To run the docker role execute:
+
+``` ansible-playbook -i hosts.ini docker.yml -u root -k```
