@@ -3,6 +3,23 @@
 - name: include OS-specific variables
   include_vars: '{{ ansible_os_family }}.yml'
 
+- name: allow connections to ovn central services port 6641 and 6642
+  become: yes
+  firewalld:
+    zone: public
+    port: 6641-6642/tcp
+    permanent: yes
+    state: enabled
+  when: install_central
+
+- name: restart firewalld
+  become: yes
+  systemd:
+    state: reloaded
+    daemon_reload: yes
+    name: firewalld
+  when: install_central
+
 - name: install OVN node packages
   become: yes
   package:
