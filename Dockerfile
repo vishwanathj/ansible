@@ -9,7 +9,8 @@ RUN apt-get update \
     && apt-get install -y iproute2 \
     && apt-get install -y iputils-ping \
     && apt-get install -y sshpass \
-    && apt-get install -y git 
+    && apt-get install -y git \
+    && apt-get install -y vim
 
 RUN sed -i "s/#host_key_checking/host_key_checking/g" /etc/ansible/ansible.cfg
 
