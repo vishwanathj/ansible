@@ -3,31 +3,31 @@
 - name: include OS-specific variables
   include_vars: '{{ ansible_os_family }}.yml'
 
-- name: open tcp ports 6641 and 6642, allowing for remote connections to the NB and SB databases
-  become: yes
-  firewalld:
-    zone: public
-    port: 6641-6642/tcp
-    permanent: yes
-    state: enabled
-  when: install_central and firewall_update
+#- name: open tcp ports 6641 and 6642, allowing for remote connections to the NB and SB databases
+#  become: yes
+#  firewalld:
+#    zone: public
+#    port: 6641-6642/tcp
+#    permanent: yes
+#    state: enabled
+#  when: install_central and firewall_update
 
-- name: open udp port 6081, allowing for geneve traffic flow between the controllers
-  become: yes
-  firewalld:
-    zone: public
-    port: 6081/udp
-    permanent: yes
-    state: enabed and firewall_update
-  when: install_node
+#- name: open udp port 6081, allowing for geneve traffic flow between the controllers
+#  become: yes
+#  firewalld:
+#    zone: public
+#    port: 6081/udp
+#    permanent: yes
+#    state: enabed and firewall_update
+#  when: install_node
 
-- name: restart firewalld
-  become: yes
-  systemd:
-    state: reloaded
-    daemon_reload: yes
-    name: firewalld
-  when: install_central and firewall_update
+#- name: restart firewalld
+#  become: yes
+#  systemd:
+#    state: reloaded
+#    daemon_reload: yes
+#    name: firewalld
+#  when: install_central and firewall_update
 
 - name: install OVN node packages
   become: yes

@@ -1,0 +1,17 @@
+---
+
+- name: apply action on given list of ports
+  become: yes
+  firewalld:
+    zone: '{{ zone }}'
+    port: '{{ item }}/{{ type }}'
+    permanent: '{{ permanent }}'
+    state: '{{ state }}' 
+  with_items: '{{ ports }}'
+
+- name: restart firewalld
+  become: yes
+  systemd:
+    state: reloaded
+    daemon_reload: yes
+    name: firewalld

@@ -1,0 +1,8 @@
+- name: enable tcp ports on ovn central for NB and SB DB connection
+  hosts: all
+  roles: 
+    - role: ports
+      vars:
+        ports:
+          - 6641-6642
+        type: tcp

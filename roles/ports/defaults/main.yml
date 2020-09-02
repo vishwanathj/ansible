@@ -1,0 +1,15 @@
+---
+
+# possible values are tcp | udp
+type: tcp
+
+# Possible values include block, dmz, drop, external, home, internal, public, trusted, work
+zone: public
+
+# possible values are yes | no
+permanent: yes
+
+#possible values are absent | present | enabled | disabled
+state: enabled
+
+ports: []
