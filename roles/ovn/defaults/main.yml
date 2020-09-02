@@ -3,3 +3,5 @@
 install_node: true
 
 install_central: true
+
+firewall_update: true

@@ -1,0 +1,9 @@
+---
+- name: installs ovn node only packages with no firewall ports opened
+  hosts: all
+  roles: 
+    - role: ovn 
+      vars:
+        install_node: true
+        install_central: false
+        firewall_update: false

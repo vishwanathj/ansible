@@ -10,7 +10,7 @@
     port: 6641-6642/tcp
     permanent: yes
     state: enabled
-  when: install_central
+  when: install_central and firewall_update
 
 - name: open udp port 6081, allowing for geneve traffic flow between the controllers
   become: yes
@@ -18,7 +18,7 @@
     zone: public
     port: 6081/udp
     permanent: yes
-    state: enabed
+    state: enabed and firewall_update
   when: install_node
 
 - name: restart firewalld
@@ -27,7 +27,7 @@
     state: reloaded
     daemon_reload: yes
     name: firewalld
-  when: install_central
+  when: install_central and firewall_update
 
 - name: install OVN node packages
   become: yes
