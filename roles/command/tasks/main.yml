@@ -1,0 +1,5 @@
+---
+
+- name: executes give argv list with command included
+  command:
+    argv: "{{ argv_list }}"

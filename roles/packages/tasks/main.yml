@@ -1,0 +1,8 @@
+---
+
+- name: package action; (un)install
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: "{{ state }}"
+  with_items: '{{ package_list }}'

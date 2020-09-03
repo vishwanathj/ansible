@@ -1,0 +1,6 @@
+---
+
+package_list: []
+
+# valid values are 'present' and 'absent'
+state: present
