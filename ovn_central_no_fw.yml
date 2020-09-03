@@ -1,9 +1,5 @@
 ---
-- name: installs ovn central only packages
+- name: installs ovn central packages
   hosts: all
   roles: 
-    - role: ovn 
-      vars:
-        install_node: false
-        install_central: true
-        firewall_update: true
+    - role: ovncentral

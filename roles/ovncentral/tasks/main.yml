@@ -1,0 +1,23 @@
+---
+
+- name: include OS-specific variables
+  include_vars: '{{ ansible_os_family }}.yml'
+
+- name: install OVN central packages
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items: '{{ ovn_central_packages }}'
+
+# systemd module is non-functional for CentOS
+- name: ensure OVN central services are started usign the command module
+  become: yes
+  command:
+    argv:
+      - systemctl
+      - enable
+      - --now
+      - "{{ item }}"
+  with_items: "{{ ovn_central_services }}"
+

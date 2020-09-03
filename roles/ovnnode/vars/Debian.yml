@@ -1,0 +1,10 @@
+---
+
+ovn_node_packages:
+  - 'ovn-host'
+  - 'ovn-common'
+
+ovn_node_services:
+  - "ovn-host"
+  - "ovn-controller"
+

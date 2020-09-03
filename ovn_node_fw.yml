@@ -2,7 +2,9 @@
 - name: installs ovn node only packages
   hosts: all
   roles: 
-    - role: ovn 
+    - role: ovnnode
+    - role: ports
       vars:
-        install_node: true
-        install_central: false
+        ports:
+          - 6081
+        type: udp

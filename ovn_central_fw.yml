@@ -1,8 +1,10 @@
 ---
-- name: installs ovn central only packages
+- name: installs ovn central packages
   hosts: all
   roles: 
-    - role: ovn 
+    - role: ovncentral
+    - role: ports
       vars:
-        install_node: false
-        install_central: true
+        ports: 
+          - 6641-6642
+        type: tcp

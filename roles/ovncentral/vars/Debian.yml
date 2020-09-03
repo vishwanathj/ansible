@@ -1,0 +1,8 @@
+---
+
+ovn_central_packages:
+  - 'ovn-central'
+
+ovn_central_services:
+  - "ovn-central"
+
