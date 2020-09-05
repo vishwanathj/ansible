@@ -1,0 +1,8 @@
+- name: enable udp port, allowing for geneve traffic flow between the controllers
+  hosts: all
+  roles: 
+    - role: ports
+      vars:
+        ports:
+          - 67
+        type: udp
