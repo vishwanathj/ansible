@@ -1,9 +1,17 @@
 ---
 
+- name: obtain and store the default firewall zone for the OS
+  become: yes
+  command:
+    argv:
+      - firewall-cmd
+      - --get-default-zone
+  register: default_zone
+
 - name: apply action on given list of ports
   become: yes
   firewalld:
-    zone: '{{ zone }}'
+    zone: '{{ default_zone.stdout }}'
     port: '{{ item }}/{{ type }}'
     permanent: '{{ permanent }}'
     state: '{{ state }}' 
