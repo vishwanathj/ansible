@@ -4,8 +4,8 @@
 type: tcp
 
 # Possible values include block, dmz, drop, external, home, internal, public, trusted, work.
-$ CentOS and Ubuntu have their default zone set to 'public' whereas Fedora server/Fedora Workstation have the default zone set to 'FedoraServer'/'FedoraWorkstation'
-#zone: public
+# CentOS and Ubuntu have their default zone set to 'public' whereas Fedora server/Fedora Workstation have the default zone set to 'FedoraServer'/'FedoraWorkstation'
+# zone: public
 
 # possible values are yes | no
 permanent: yes
