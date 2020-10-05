@@ -3,9 +3,9 @@
 ovn_node_packages:
   - 'ovn'
   - 'ovn-host'
-  - 'ovn-vtep'
+  #- 'ovn-vtep'
 
 ovn_node_services:
-  - "ovn-controller-vtep"
+  #- "ovn-controller-vtep"
   - "ovn-controller"
 
