@@ -1,6 +1,7 @@
 ---
 - name: installs docker packages
   hosts: all
+  become: true
   roles: 
     - role: docker
       vars:
