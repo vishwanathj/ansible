@@ -12,9 +12,13 @@ To run the vnc role execute:
 
 To run the docker role execute:
 
-``` ansible-playbook -i hosts.ini docker.yml -u root -k```
+``` 
 
-``` ansible-playbook -i 192.168.122.77,192.168.122.41, docker.yml --extra-vars="docker_users=[\"ubuntu\"]" -u ubuntu -k ```
+ansible-playbook -i hosts.ini docker.yml -u root -k
+
+ansible-playbook -i 192.168.122.77,192.168.122.41, docker.yml --extra-vars="docker_users=[\"ubuntu\"]" -u ubuntu -k 
+
+```
 
 To run the ovs role execute:
 
